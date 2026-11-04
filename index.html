@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How ZiLit ZiLit handles local workspace data, optional LinkedIn authorization, and visits to this privacy page.">
+<meta name="color-scheme" content="light dark">
+<title>Privacy policy · ZiLit ZiLit</title>
+<link rel="icon" type="image/png" href="mascot.png">
+<style>
+:root{--canvas:#f7f5ef;--paper:#fff;--ink:#11121e;--muted:#60616d;--accent:#486000;--signal:#d7f500;--line:#dad9d2;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--canvas);font-size:17px;line-height:1.7;color-scheme:light dark}
+*{box-sizing:border-box}body{margin:0}a{color:var(--accent);text-underline-offset:.2em}a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}header,main,footer{max-width:820px;margin:auto;padding:32px 28px}header{display:flex;align-items:center;gap:16px;padding-top:48px}header img{width:64px;height:64px;border-radius:14px}header p{margin:0;font-weight:650}header small,.meta,footer{color:var(--muted)}main{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:40px}h1{font-size:clamp(2rem,6vw,3rem);letter-spacing:-.04em;line-height:1.15;margin:0 0 16px}h2{font-size:1.15rem;line-height:1.4;margin:36px 0 10px}p,ul{margin:12px 0}li{margin:6px 0}code{font-size:.87em;overflow-wrap:anywhere}nav{border-block:1px solid var(--line);padding:16px 0;margin:26px 0;display:flex;gap:12px 24px;flex-wrap:wrap}nav a{font-size:.9rem}.note{border-left:4px solid var(--signal);padding-left:18px}footer{font-size:.84rem;padding-bottom:48px}section{scroll-margin-top:24px}::selection{background:var(--signal);color:#11121e}
+@media(prefers-color-scheme:dark){:root{--canvas:#11121e;--paper:#1d1f2c;--ink:#f7f5ef;--muted:#b7b8c4;--accent:#d7f500;--line:#393b4c}}
+@media(max-width:600px){header,footer{padding-inline:20px}main{margin:0 12px;padding:28px 20px}header{padding-top:28px}nav{gap:10px 18px}}
+@media(prefers-contrast:more){main{border-color:var(--ink)}a{text-decoration-thickness:2px}}
+</style>
+</head>
+<body>
+<header><img src="mascot.png" width="64" height="64" alt="ZiLit ZiLit Signal Officer mascot"><div><p>ZiLit ZiLit</p><small>Your social media marketing workspace</small></div></header>
+<main id="main">
+<h1>Privacy policy</h1>
+<p class="meta">Effective and last updated: <time datetime="2026-11-04">4 November 2026</time></p>
+<p>ZiLit ZiLit is a native macOS application maintained by the independent developer identified as <a href="https://github.com/unofang">unofang on GitHub</a>. This policy explains the current development version of the app and this privacy website.</p>
+<p class="note">The app organizes product information, marketing assignments, manual drafts and local review. Optional LinkedIn Page discovery requires an approved developer application and your authorization. Publishing, live content research and AI generation are not available in this version.</p>
+<nav aria-label="Policy sections"><a href="#local-data">Local data</a><a href="#linkedin">LinkedIn</a><a href="#control">Your controls</a><a href="#website">This website</a><a href="#contact">Contact</a></nav>
+<section id="local-data"><h2>1. Data stored on your Mac</h2>
+<p>The app saves the information you enter: product names, approved facts, audiences, voice, links and asset references; assignment briefs and progress; drafts, formats and review status; and activity records with dates. When you configure LinkedIn, it also saves the public Client ID, API configuration, authorization expiry, Page names, identifiers and roles, last verification date, and product-to-Page mappings.</p>
+<p>This workspace is stored as a local JSON file in <code>~/Library/Application Support/ZiLit ZiLit/workspace.json</code>. It is used to provide the workspace and restore it when you reopen the app. Local content is not automatically uploaded to the developer. There is no developer-operated cloud sync or app account service in the current version. Your own device, backup or synchronization settings may make additional copies.</p></section>
+<section id="linkedin"><h2>2. Optional LinkedIn authorization</h2>
+<p>Connecting is optional. When you choose to connect, the app opens LinkedIn in your default browser. You enter your LinkedIn credentials with LinkedIn, not into ZiLit. The app uses an authorization code, a temporary random state and PKCE verifier to complete authorization through a short-lived listener bound to your Mac's loopback address. These temporary values are held in memory and are not deliberately logged or saved in the workspace.</p>
+<p>If authorization succeeds, the access token and expiry are stored in macOS Keychain, configured for access while unlocked on that device. Tokens are not stored in the workspace JSON or sent to the developer. The app does not request a LinkedIn password or client secret.</p>
+<p>The app sends the public Client ID, requested permissions and authorization-protocol values to LinkedIn, then sends its access token to LinkedIn's official API to retrieve eligible Page roles and organization names when you connect or refresh. It uses those results to let you map eligible Pages to products. This version does not send assignment briefs or drafts to LinkedIn, request posting scopes, or perform publishing, comments, messages or Page changes. If your developer app only offers the broader administration permission, LinkedIn's consent screen may describe broader access than this build uses.</p>
+<p>There is no automatic LinkedIn refresh on app launch. LinkedIn may process authorization, device and request information under its own <a href="https://www.linkedin.com/legal/privacy-policy">privacy policy</a>. Availability depends on LinkedIn's approval, your consent and your Page role.</p></section>
+<section id="sharing"><h2>3. Sharing, analytics and AI</h2>
+<p>The current app contains no advertising or analytics SDK and does not sell personal data or transmit local workspace content to an AI provider. Its optional authenticated network integration is LinkedIn as described above. Opening external links from the app also connects your browser to the selected third-party website. This policy will be updated when material data-handling features change.</p></section>
+<section id="control"><h2>4. Retention and your controls</h2>
+<p>Workspace data remains on your Mac until you change or remove it. The current app has no automatic retention period. To remove the local workspace, quit the app and delete the workspace file identified above. Uninstalling the app alone may leave its Application Support data and Keychain items behind. Manage any copies in your own backups separately.</p>
+<p>Use Connections → Disconnect to remove the local LinkedIn credential and all Page mappings. This retains local assignments and drafts and does not revoke LinkedIn's server-side grant. To revoke that grant too, use LinkedIn's permitted-services settings. Reconnecting removes the previous local credential and mappings before starting a new authorization attempt. Expired credentials are not automatically deleted; use Disconnect to remove them. Disconnect before removing the app if you also want its local credential removed.</p>
+<p>The developer cannot remotely inspect or erase files on your Mac through this version. You can correct local product information, assignments and drafts within the workspace. For privacy questions or requests concerning information you have voluntarily shared with the maintainer, use the contact route below.</p></section>
+<section id="security"><h2>5. Security</h2>
+<p>The app uses macOS Keychain for LinkedIn tokens, HTTPS for LinkedIn requests, and atomic writes for workspace persistence. Workspace JSON is not separately encrypted by the app; protect your device, account and backups. No storage or transmission method can guarantee absolute security.</p></section>
+<section id="website"><h2>6. This privacy website</h2>
+<p>This site is hosted on GitHub Pages. It uses locally hosted images and system fonts, with no site-added analytics, advertising, cookies, contact forms or third-party scripts. GitHub states that it logs and stores visitors' IP addresses for security when they visit GitHub Pages. See <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages data collection</a> and the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a> for GitHub's processing, retention and international data handling.</p>
+<p>Following an external link or contacting the maintainer through GitHub means the relevant service's privacy practices also apply.</p></section>
+<section id="contact"><h2>7. Contact</h2>
+<p>For privacy questions, <a href="https://github.com/unofang/zilit-zilit-privacy/issues/new?title=Privacy%20contact%20request">request a private contact channel through the privacy repository's issue tracker</a>. Issues are public: include only a request to contact the maintainer privately. Do not post personal information, passwords, tokens, private workspace files or sensitive details. GitHub may retain issue content under its own policies. A direct privacy email will be added when a dedicated contact address is established.</p></section>
+<section id="changes"><h2>8. Changes to this policy</h2><p>The current policy and its update date are published at this URL. Material feature changes, including any future AI, cloud or publishing features, will be described here when introduced. The public repository records policy revisions.</p></section>
+</main>
+<footer>ZiLit ZiLit · <a href="https://github.com/unofang/zilit-zilit-privacy">Public policy repository</a> · <a href="https://www.linkedin.com/company/zilit-zilit/">LinkedIn Page</a></footer>
+</body>
+</html>
